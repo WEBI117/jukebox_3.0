@@ -1,7 +1,7 @@
 interface songInterface {
     name: string,
     uri: string
-    duration: number
+    duration_ms: number
 }
 
 const songHelper = {
@@ -9,7 +9,7 @@ const songHelper = {
         var songobj: songInterface = {
             name: spotifySongObject.name,
             uri: spotifySongObject.uri,
-            duration: spotifySongObject.duration_ms
+            duration_ms: spotifySongObject.duration_ms
         }
         return songobj
     },
