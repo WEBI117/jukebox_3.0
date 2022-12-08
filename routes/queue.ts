@@ -19,6 +19,7 @@ router.get("/addsong", (req: Request, res: Response) => {
     var q = queueclass.getQueue()
     // socket emit song added event...
     req.io.emit("queueupdated")
+    res.status(200).send()
     // Need to implement a socket io utility class to have access to the socketio instance...
 })
 
