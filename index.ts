@@ -31,6 +31,9 @@ io.on("connection", (socket) => {
         queueclass.removePlaySong()
         io.emit("queueupdated")
     })
+    socket.on('test', (testdata) => {
+        console.log(testdata)
+    })
 })
 httpServer.listen(socketport)
 
@@ -56,6 +59,6 @@ app.get('/', (req: Request, res: Response) => {
 
 
 
-app.listen(port, () => {
+app.listen(port,"0.0.0.0", () => {
     console.log("App is listening on port 3000")
 })
