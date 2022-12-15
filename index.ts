@@ -39,6 +39,7 @@ io.on("connection", (socket) => {
     socket.on('addsong', (song, callback) => {
         try {
             queueclass.addsong(song)
+            socket.emit("queueupdated")
             callback({
                 "status": 'OK'
             })
