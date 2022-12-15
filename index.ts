@@ -36,11 +36,20 @@ io.on("connection", (socket) => {
         queueclass.removePlaySong()
         io.emit("queueupdated")
     })
-    socket.on('addsong', (song,callback) => {
-        queueclass.addsong(song)
-        callback({
-            "status": 200
-        })
+    socket.on('addsong', (song, callback) => {
+        try {
+            queueclass.addsong(song)
+            socket.emit("queueupdated")
+            callback({
+                "status": 'OK'
+            })
+            io.emit("queueupdated")
+        }
+        catch (err) {
+            callback({
+                "status": 'KO'
+            })
+        }
     })
 })
 httpSocketServer.listen(socketport)
@@ -68,6 +77,6 @@ app.get('/', (req: Request, res: Response) => {
 
 
 
-app.listen(port,'0.0.0.0', () => {
+app.listen(port, '0.0.0.0', () => {
     console.log("App is listening on port 3000")
 })
