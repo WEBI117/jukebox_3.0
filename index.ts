@@ -42,7 +42,7 @@ io.on("connection", (socket) => {
             callback({
                 "status": 'OK'
             })
-            socket.emit("queueupdated")
+            io.emit("queueupdated")
         }
         catch (err) {
             callback({

@@ -13,13 +13,20 @@ router.get("/", async (req, res) => {
 })
 
 router.get("/addsong", (req: Request, res: Response) => {
-    var song: songInterface = req.body as songInterface
-    var extracted = songHelper.extractSong(song)
-    queueclass.addsong(extracted)
-    var q = queueclass.getQueue()
-    // socket emit song added event...
-    req.io.emit("queueupdated")
-    // Need to implement a socket io utility class to have access to the socketio instance...
+    try{
+        var song: songInterface = req.body.song as songInterface
+        var extracted = songHelper.extractSong(song)
+        queueclass.addsong(extracted)
+        var q = queueclass.getQueue()
+        // socket emit song added event...
+        req.io.emit("queueupdated")
+        // Need to implement a socket io utility class to have access to the socketio instance...
+        res.status(200).send()
+    }
+    catch(err){
+        console.log(err)
+        res.status(500).send()
+    }
 })
 
 module.exports = router 
