@@ -1,5 +1,5 @@
 const axios = require("axios")
-import { songInterface, songHelper } from './songhelper'
+import { songInterface, songHelper } from '../helpers/songhelper'
 
 
 class trackQueue {

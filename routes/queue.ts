@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 const router = express.Router()
 import queueclass from '../datastructures/trackqueue'
-import { songInterface, songHelper } from '../datastructures/songhelper'
+import { songInterface, songHelper } from '../helpers/songhelper'
 
 // Send queue of songs to play
 router.get("/", async (req, res) => {

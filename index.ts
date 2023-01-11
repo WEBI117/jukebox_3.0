@@ -12,6 +12,7 @@ const loginrouter = require("./routes/login")
 const tokenrouter = require("./routes/token")
 const queuerouter = require("./routes/queue")
 const searchrouter = require("./routes/search")
+const serverinfo = require("./routes/serverinfo")
 const port = 3000
 const httpsport = 3443
 const socketport = 3002
@@ -66,6 +67,7 @@ app.use('/login', loginrouter)
 app.use('/token', tokenrouter)
 app.use('/queue', queuerouter)
 app.use('/search', searchrouter)
+app.use('/serverinfo', serverinfo)
 
 
 app.get('/', (req: Request, res: Response) => {

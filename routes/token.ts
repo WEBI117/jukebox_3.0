@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 const router = express.Router()
-import tokenhelper from '../datastructures/tokenhelper'
+import tokenhelper from '../helpers/tokenhelper';
 
 router.get('/', (req, res) => {
     if (tokenhelper.getToken() != "") {

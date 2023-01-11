@@ -1,6 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import axios from 'axios'
-import tokenHelper from '../datastructures/tokenhelper'
+import tokenHelper from '../helpers/tokenhelper'
 import { RESERVED_EVENTS } from 'socket.io/dist/socket';
 const router = express.Router()
 

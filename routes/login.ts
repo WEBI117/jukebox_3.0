@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 const router = express.Router()
 import queueclass from '../datastructures/trackqueue'
-import tokenhelper from '../datastructures/tokenhelper'
+import tokenhelper from '../helpers/tokenhelper'
 const axios = require("axios")
 const client_ID = "9c2551871ad14cb9868036ed0029a391"
 const client_secret = "e60faa589d364207932479e004e637f6"
